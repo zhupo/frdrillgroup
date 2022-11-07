@@ -1,0 +1,102 @@
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PQ8J39D');</script>
+<!-- End Google Tag Manager -->
+<body> 
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQ8J39D"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<div class="sitetop">
+    <div class="cl">        <span class="fl mo-header-menu"><i class="qico qico-caidan"></i></span>		<span class="fr mo-header-search"><i class="qico qico-search3"></i></span>	</div>
+  <div class="mo-search">
+    <form role="search" id="searchform" class="cl" method="post" action="{tmp:sitepath}search/">
+      <input type="hidden" name="type" value="product" />
+      <input type="text" class="form-control" name="keys" placeholder="">
+      <button type="submit" class="submit_btn" value=""><i class="qico qico-search"></i></button>
+    </form>
+  </div>
+</div>
+<div class="mo-leftmenu visible-xs-block">
+  <div class="tit cl">
+    <h6>All Categories</h6>
+    <span><i class="qico qico-guanbi"></i></span></div>
+  <ul>
+    <li><a href="{tmp:homelink}" rel="nofollow">Home</a></li>
+    {tmp:navlist type=all}
+    <li><a href="[navlist:link]" rel="nofollow">[navlist:name]</a> {if:[navlist:num]>0} <i class="qico qico-down down-btn"></i>
+      <ul>
+        {tmp:navlist1 sid=[navlist:sid]}
+        <li><a href="[navlist1:link]" rel="nofollow">[navlist1:name]</a></li>
+        {/tmp:navlist1}
+      </ul>
+      {end if} </li>
+    {/tmp:navlist}
+
+    <!-- {cms:channellist id="nav" type="top" cache="0" condition="1=isnav" row="20"}
+      <li>
+          <a class="{if $nav->is_active}active{/if}" {if $nav.href eq 0}href="{$nav.url}"{/if}  {if $nav.target eq 1}target="_blank"{/if}>{$nav.name}</a>
+      </li>
+    {/cms:channellist} -->
+  </ul>
+</div>
+<div class="header">
+  <div class="wp">
+    <div class="logo"> <a href="{tmp:homelink}" rel="nofollow"><img src="__CDN__/group/images/logo.png" alt="logo"></a> </div>
+    <div class="nav">
+      <ul>
+        <!-- <li><a href="{tmp:homelink}" rel="nofollow">Home</a></li>
+        {tmp:navlist type=all}
+        <li><a href="[navlist:link]"  rel="nofollow">[navlist:name]</a> {if:[navlist:num]>0}
+          <dl>
+            {tmp:navlist1 sid=[navlist:sid]}
+            <dd><a href="[navlist1:link]" rel="nofollow">[navlist1:name]</a></dd>
+            {/tmp:navlist1}
+          </dl>
+          {end if} </li>
+        {/tmp:navlist} -->
+
+
+        {cms:channellist id="nav" type="top" cache="0" condition="1=isnav" row="20"}
+                <li>
+                    <a {if $nav.target eq 1}target="_blank" {/if}>{$nav.name}</a>
+                    {if $nav.has_child}
+                        <dl class="dropdown-menu" style="min-width: 100px;">
+                            {cms:channellist id="son" type="son" condition="1=isnav" typeid="nav['id']" cache="0" row="20"}
+                            <dd><a href="{$son.url}">{$son.name}</a></dd>
+                            {/cms:channellist}
+                          </dl>
+                    {/if}
+                </li>
+                {/cms:channellist}
+      </ul>
+    </div>
+    <div class="header_right">
+      <div class="search">
+        <h3><i class="qico qico-search3"></i></h3>
+        <form class="serchbox" name="search"  method="post" action="{tmp:sitepath}search/">
+          <input type="hidden" name="type" value="product" />
+          <input class="submit_text" type="text" name="keys" placeholder="Search" />
+          <input class="submit_btn" type="submit" value="GO" />
+        </form>
+      </div>
+      <div class="header-lang">
+        <div class="box"> <img src="__CDN__/group/images/flag/en.png" /><em>EN</em><i class="qico qico-down-jiantou"></i> </div>
+        <ul>
+		  <li><a href="https://www.frdrillgroup.com" tran="no" ><img src="__CDN__/group/images/flag/en.png" />EN</a></li>
+          <li><a href="https://www.frdrillgroup.com/es/index.html" tran="no" ><img src="__CDN__/group/images/flag/es.png" />ES</a></li>
+          <li><a href="https://www.frdrillgroup.com/pt/index.html" tran="no" ><img src="__CDN__/group/images/flag/pt.png" />PT</a></li>
+          <li><a href="https://www.frdrillgroup.com/sv/index.html" tran="no" ><img src="__CDN__/group/images/flag/sv.png" />SV</a></li>
+          <li><a href="https://www.frdrillgroup.com/de/index.html" tran="no" ><img src="__CDN__/group/images/flag/de.png" />DE</a></li>
+          <li><a href="https://www.frdrillgroup.com/tr/index.html" tran="no" ><img src="__CDN__/group/images/flag/tr.png" />TR</a></li>
+          <li><a href="https://www.frdrillgroup.com/fr/index.html" tran="no" ><img src="__CDN__/group/images/flag/fr.png" />FR</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

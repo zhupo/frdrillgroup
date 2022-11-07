@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=10" />
+<meta name="msvalidate.01" content="13D6934EC79D9A73657A16A413368183" />
+<title>DTH Bit, DTH Hammer, Dth Hammer Bit, Drill Dth Bit--{tmp:sitetitle}{tmp:sitetitle2}</title>
+<meta name="keywords" content="{tmp:sitekeys}" >
+<meta name="description" content="{tmp:sitedesc}">
+<link rel="stylesheet" type="text/css" href="__CDN__/group/css/public.css"/>
+<link rel="stylesheet" type="text/css" href="__CDN__/group/css/main.css"/>
+<link rel="stylesheet" type="text/css" href="__CDN__/group/css/swiper3.css"/>
+<link type="text/css" rel="stylesheet" href="__CDN__/group/css/media-queries.css" />
+<script type="text/javascript" src="__CDN__/group/js/jquery.js"></script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PQ8J39D');</script>
+<!-- End Google Tag Manager -->
+</head>
+
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQ8J39D"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+{include file="common/head" /}
+<div id="banner">
+  <div class="swiper-container">
+    <div class="swiper-wrapper"> {tmp:slidelist type=A num=3}
+      <div class="swiper-slide"><img src="{tmp:rootdir}[slidelist:pic]" /></div>
+      {/tmp:slidelist} </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+<div class="indexA">
+  <div class="wp cl">
+    <h3><em>Product Categories</em></h3>
+    <ul class="cl">
+      {tmp:ad atid=1 max=6}
+      <li> <a class="pic" href="[ad:link]"><img src="{tmp:rootdir}[ad:pic]" /></a>
+        <h5><a href="[ad:link]">[ad:title]</a></h5>
+      </li>
+      {/tmp:ad}
+    </ul>
+  </div>
+</div>
+<div class="indexB">
+  <div class="wp cl">
+    <div class="pic">
+      <div class="swiper-container">
+        <div class="swiper-wrapper"> {tmp:ad atid=2 max=3}
+          <div class="swiper-slide"><img src="{tmp:rootdir}[ad:pic]" /></div>
+          {/tmp:ad} </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    <div class="txt">
+      <h3>ABOUT US</h3>
+      {label:about}[label:content]{/label} <a class="more" href="{tmp:type sid=8}[type:link]{/tmp:type}">MORE <i class="qico qico-right7"></i></a> </div>
+  </div>
+</div>
+{tmp:ad atid=3 max=1}
+<div class="indexC" style="background: url({tmp:rootdir}[ad:pic])">
+  <div class="wp cl">
+    <h3>OUR MISSION</h3>
+    <img src="{tmp:rootdir}[ad:pic2]" />
+    <h5>[ad:title]</h5>
+    <p>[ad:adcontent]</p>
+  </div>
+</div>
+{/tmp:ad}
+<div class="wp indexD cl">
+  <h3>LATEST NEWS</h3>
+  <div class="cl"></div>
+  <div class="indexnews">
+    <ul>
+      {tmp:content sid=9 num=3 order=isgood}
+      <li class="cl"> <a class="pic" href="[content:link]"><img src="{tmp:rootdir}[content:pic]" alt="[content:title]"/></a>
+        <div class="t">
+          <h5><a href="[content:link]">[content:title]</a></h5>
+          <p>[content:zdesc]</p>
+          <div class="more"><span>{formatdate:[content:date],enm} {formatdate:[content:date],dd}, {formatdate:[content:date],yyyy}</span><a href="[content:link]">MORE <i class="qico qico-right7"></i></a></div>
+        </div>
+      </li>
+      {/tmp:content}
+    </ul>
+    <a class="getmore" href="{tmp:type sid=9}[type:link]{/tmp:type}">MORE <i class="qico qico-right7"></i></a> </div>
+  <div class="v"> <img src="__CDN__/group/images/news.jpg" /> </div>
+</div>
+{include file="common/foot" /} 
+<script type="text/javascript" src="__CDN__/group/js/js.js"></script> 
+<script type="text/javascript" src="__CDN__/group/js/swiper3.js"></script> 
+<script type="text/javascript" src="__CDN__/group/js/index.js"></script>
+</body>
+</html>

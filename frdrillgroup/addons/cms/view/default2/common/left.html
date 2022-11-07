@@ -1,0 +1,17 @@
+<div class="sidemenu">
+    <h3>Products</h3>
+    <ul>
+	    {tmp:navlist sid={tmp:tsid}}
+	    <li {if:[navlist:sid]={tmp:sid} or [navlist:sid]={tmp:psid}}class="active"{end if}>
+		    <h5><a href="[navlist:link]#list">{tmp:spid}[navlist:name]</a>{if:[navlist:num]>0}<span></span>{end if}</h5>
+			{if:[navlist:num]>0}
+			<dl <?php if("[navlist:sid]"=="{tmp:sid}" or "[navlist:sid]"=="{tmp:psid}") {?> style="display:block;" <?php }?>>
+			    {tmp:navlist1 sid=[navlist:sid]}
+				<dd {if1:[navlist1:sid]={tmp:sid}}class="active"{end if1}><a href="[navlist1:link]#list">[navlist1:name]</a></dd>
+				{/tmp:navlist1}
+			</dl>
+		    {end if} 
+		</li>
+		{/tmp:navlist}
+	</ul>
+</div>
