@@ -31,9 +31,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 {include file="common/head" /}
 <div id="banner">
   <div class="swiper-container">
-    <div class="swiper-wrapper"> {tmp:slidelist type=A num=3}
-      <div class="swiper-slide"><img src="{tmp:rootdir}[slidelist:pic]" /></div>
-      {/tmp:slidelist} </div>
+    <div class="swiper-wrapper"> 
+      {cms:blocklist id="block" name="banner" orderby="weigh" orderway="desc" }
+        <div class="swiper-slide"><img src="{$block.image}" alt=""></div>
+      {/cms:blocklist}
+    </div>
     <div class="swiper-pagination"></div>
   </div>
 </div>
@@ -41,11 +43,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wp cl">
     <h3><em>Product Categories</em></h3>
     <ul class="cl">
-      {tmp:ad atid=1 max=6}
-      <li> <a class="pic" href="[ad:link]"><img src="{tmp:rootdir}[ad:pic]" /></a>
-        <h5><a href="[ad:link]">[ad:title]</a></h5>
+      {cms:channellist id="channel" type="son" typeid="44" condition="1=cpindex"}
+      {cms:arclist id="item" flag="index" row="6" orderby="updatetime" channel="channel['id']", addon="content,bgimage"}
+      <li> <a class="pic" href="{$channel.url}">
+        <img src="{$item.image}" /></a>
+        <h5><a href="{$channel.url}">{$item.title}</a></h5>
       </li>
-      {/tmp:ad}
+      {/cms:arclist}
+      {/cms:channellist}
     </ul>
   </div>
 </div>
