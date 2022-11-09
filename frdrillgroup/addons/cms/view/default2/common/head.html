@@ -64,7 +64,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         {cms:channellist id="nav" type="top" cache="0" condition="1=isnav" row="20"}
                 <li>
-                    <a {if $nav.target eq 1}target="_blank" {/if}>{$nav.name}</a>
+                    <a href="{$nav.url}">{$nav.name}</a>
                     {if $nav.has_child}
                         <dl class="dropdown-menu" style="min-width: 100px;">
                             {cms:channellist id="son" type="son" condition="1=isnav" typeid="nav['id']" cache="0" row="20"}

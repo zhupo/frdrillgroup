@@ -1,7 +1,7 @@
 <?php
 
 return array (
-  'name' => 'www.qanzh.cn',
+  'name' => 'CHANGSHA FRIEND INDUSTRIAL CO.,LTD',
   'beian' => 'Copyright ©  | www.qanzh.cn',
   'cdnurl' => '',
   'version' => '2022-5-22 16:16:07',
@@ -39,8 +39,8 @@ return array (
   'title' => 'www.qanzh.cn',
   'keywords' => 'www.qanzh.cn',
   'description' => 'Invess offers an extensive range of professional services and a high degree of spe-cialization. We serves both private & public traded companies. We bring over 35 years of experience.',
-  'logotxt' => 'Demo',
-  'logo' => '',
+  'logotxt' => '',
+  'logo' => '/uploads/20220611/43b49fcc83a4b7f8a4f9c447d28ae0c1.png',
   'logo2' => '',
   'head' => '1',
   'indexfw' => '1',

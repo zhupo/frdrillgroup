@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=10" />
+<title>{tmp:keys} Search result-{tmp:sitetitle}</title>
+<meta name="keywords" content="{tmp:pagekeys}" >
+<meta name="description" content="{tmp:pagedesc}">
+<link rel="stylesheet" type="text/css" href="{tmp:tempath}css/public.css"/>
+<link rel="stylesheet" type="text/css" href="{tmp:tempath}css/main.css"/>
+<link type="text/css" rel="stylesheet" href="{tmp:tempath}css/media-queries.css" />
+<script type="text/javascript" src="{tmp:tempath}js/jquery.js"></script>
+</head>
+
+<body>
+{tmp:top}
+<div class="sidebaner pr"> <img src="{tmp:tempath}images/sidebanner01.jpg" /> </div>
+<div class="path">
+  <div class="wp cl">
+    <p>{tmp:location style=> home=Home}</p>
+  </div>
+</div>
+<div class="main wp cl">
+  <div class="mainleft"> 
+  <div class="left_nav">
+  <h3>Products</h3>
+  <ul>
+    {tmp:navlist sid=1}
+    <li {if:[navlist:sid]={tmp:sid}}class="active"{end if}><a href="[navlist:link]">[navlist:name]</a></li>
+    {/tmp:navlist}
+  </ul>
+</div>
+  </div>
+  <div class="mainRight">
+    <div class="productlist">
+      <ul>
+        {tmp:search sid={tmp:sid} size=10 order=order}
+        <li> <a class="pic" href="[search:link]"><img src="{tmp:rootdir}[search:pic]" alt="[search:title]"/><ins></ins></a>
+          <div class="txt cl">
+            <h6><a href="[search:link]">[search:title]</a></h6>
+            <p>[search:zpdesc]</p>
+            <a class="more" href="[search:link]">MORE <i class="qico qico-right7"></i></a> </div>
+        </li>
+        {/tmp:search}
+      </ul>
+    </div>
+    <div class="digg"> {list:page len=3 style=1} </div>
+  </div>
+</div>
+{tmp:foot} 
+<script type="text/javascript" src="{tmp:tempath}js/jquery.js"></script> 
+<script type="text/javascript" src="{tmp:tempath}js/js.js"></script>
+</body>
+</html>

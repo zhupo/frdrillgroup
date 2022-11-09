@@ -1,17 +1,25 @@
 <div id="footer">
   <div class="wp cl">
     <div class="foot-contact">
-      <h5>{tmp:companyname}</h5>
-      <p>Tel:<a href="tel:{tmp:tel}" rel="nofollow">{tmp:tel}</a></p>
-      <p>Fax:{tmp:fax}</p>
-      <p>Add:{tmp:address}</p>
-      <p>Email: <a href="mailto:{tmp:email1}" rel="nofollow">{tmp:email1}</a>
-<a href="mailto:{tmp:email2}" rel="nofollow">{tmp:email2}</a></p>
+      <h5>{$site.name}</h5>
+{cms:blocklist id="block" name="contact" orderby="id" orderway="desc"}
+{if $block.title == 'tel'}
+<p>Tel:<a href="tel:{:str_replace(['<p>','</p>'], '', $block.content)}" rel="nofollow">{:str_replace(["<p>","</p>"], "", $block.content)}</a></p>
+{elseif $block.title == 'Email'}
+<p>Email: <a href="mailto:{:str_replace(['<p>','</p>'], '', $block.content)}" rel="nofollow">{:str_replace(["<p>","</p>"], "", $block.content)}</a>
+{else}
+<p>{$block.title}:{:str_replace(["<p>","</p>"], "", $block.content)}</p>
+{/if}
+{/cms:blocklist}
 
-      <div class="share"> <a href="https://www.facebook.com/pages/creation/?ref_type=universal_creation_hub" rel="nofollow"><i class="qico qico-facebook"></i></a> 
-<a href="https://twitter.com/home?lang=en" rel="nofollow"><i class="qico qico-twitter"></i></a> <a href="https://www.linkedin.com/in/%E9%98%B3-%E6%AC%A7-1206161a3/" rel="nofollow"><i class="qico qico-linkedin"></i></a>
- <a href="https://www.pinterest.com/ojack1582/pins/" rel="nofollow"><i class="qico qico-pinterest"></i></a> <a href="https://www.instagram.com/frienddrillgroup/" rel="nofollow"><i class="qico qico-instagram"></i></a>
-<a href="https://www.youtube.com/channel/UCuUSPOFcshugm7knbZ0lzcA/videos" rel="nofollow"><i class="qico qico-youtube"></i></a> </div>
+      <div class="share">
+        <a href="https://www.facebook.com/pages/creation/?ref_type=universal_creation_hub" rel="nofollow"><i class="qico qico-facebook"></i></a> 
+        <a href="https://twitter.com/home?lang=en" rel="nofollow"><i class="qico qico-twitter"></i></a> 
+        <a href="https://www.linkedin.com/in/%E9%98%B3-%E6%AC%A7-1206161a3/" rel="nofollow"><i class="qico qico-linkedin"></i></a>
+        <a href="https://www.pinterest.com/ojack1582/pins/" rel="nofollow"><i class="qico qico-pinterest"></i></a>
+        <a href="https://www.instagram.com/frienddrillgroup/" rel="nofollow"><i class="qico qico-instagram"></i></a>
+        <a href="https://www.youtube.com/channel/UCuUSPOFcshugm7knbZ0lzcA/videos" rel="nofollow"><i class="qico qico-youtube"></i></a>
+    </div>
     </div>
     <div class="foot-list">
       <h5>Product</h5>
@@ -32,9 +40,17 @@
     <div class="foot-form">
       <h5>Subscribe</h5>
       <div class="sendemail cl">
-        <form name="inviteform" method="post" action="{tmp:rootdir}/?invitat">
+        <!-- <form name="inviteform" method="post" action="{tmp:rootdir}/?invitat">
           <input class="post-text" name="email" type="text" placeholder="Enter your email" />
           <textarea id="pintro-ly_content" name="message" maxlength="300" rows="4" class="c_cnt" placeholder="Enter your message"></textarea>
+          <button type="submit" class="post-btn" id="chk_math">SUBMIT</button>
+        </form> -->
+
+        <form class="contact-from" onsubmit="return $('.formPoint').show();" method="POST" action="/d/customer/post.html">
+          <input type="hidden" name="__diyname__" value="customer">
+          {:token()}
+          <input class="post-text" name="row[email]" id="email" type="text" placeholder="Enter your email" />
+          <textarea id="pintro-ly_content" name="row[content]" id="message" maxlength="300" rows="4" class="c_cnt" placeholder="Enter your message"></textarea>
           <button type="submit" class="post-btn" id="chk_math">SUBMIT</button>
         </form>
       </div>
