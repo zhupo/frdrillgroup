@@ -16,15 +16,18 @@
 
 <body>
 {include file="common/head" /}
-<div class="sidebaner pr"> <img src="{tmp:rootdir}{tmp:spic}" alt="{tmp:sname}"/> </div>
+{include file="common/mbx" /}
+<!-- <div class="sidebaner pr"> <img src="{tmp:rootdir}{tmp:spic}" alt="{tmp:sname}"/> </div>
 <div class="path">
   <div class="wp cl">
     <p>{tmp:location style=> home=Home}</p>
   </div>
-</div>
+</div> -->
 <div class="main wp cl">
-  <div class="mainleft"> {tmp:left}
-    {tmp:template src=sideform.html} </div>
+  <div class="mainleft">
+    {include file="common/left" /}
+    {include file="sideform" /}
+  </div>
   <div class="mainRight">
     <div class="productlist">
       <ul>

@@ -1,7 +1,7 @@
 <div class="sidemenu">
     <h3>Products</h3>
     <ul>
-	    {tmp:navlist sid={tmp:tsid}}
+	    <!-- {tmp:navlist sid={tmp:tsid}}
 	    <li {if:[navlist:sid]={tmp:sid} or [navlist:sid]={tmp:psid}}class="active"{end if}>
 		    <h5><a href="[navlist:link]#list">{tmp:spid}[navlist:name]</a>{if:[navlist:num]>0}<span></span>{end if}</h5>
 			{if:[navlist:num]>0}
@@ -12,6 +12,22 @@
 			</dl>
 		    {end if} 
 		</li>
-		{/tmp:navlist}
+		{/tmp:navlist} -->
+
+		{cms:channellist id="channel" type="son" typeid="44" condition="1=cpindex" orderby="weigh" orderway="asc"}
+			<!-- <li><a href="{$channel.url}" rel="nofollow">{$channel.name}</a></li> -->
+			
+			<li class="{if $channel.is_active} active {/if}">
+		    <h5><a href="{$channel.url}">{$channel.name}</a>{if $channel.has_child}<span></span>{/if}</h5>
+			{if $channel.has_child}
+			<dl style="{if $channel.is_active} display:block; {/if}">
+				{cms:channellist id="son" type="son" typeid="channel['id']" cache="0" row="20"}
+					<dd class="{if $son.is_active} active {/if}"><a href="{$son.url}">{$son.name}</a></dd>
+				{/cms:channellist}
+			</dl>
+		    {/if} 
+		</li>
+    {/cms:channellist}
+
 	</ul>
 </div>
