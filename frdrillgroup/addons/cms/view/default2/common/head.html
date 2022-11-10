@@ -62,7 +62,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         {/tmp:navlist} -->
 
 
-        {cms:channellist id="nav" type="top" cache="0" condition="1=isnav" row="20"}
+        {cms:channellist id="nav" type="top" cache="0" condition="1=isnav" row="20" orderby="weigh" orderway="desc"}
                 <li>
                     <a href="{$nav.url}">{$nav.name}</a>
                     {if $nav.has_child}

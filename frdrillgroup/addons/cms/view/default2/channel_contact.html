@@ -11,6 +11,7 @@
 <link rel="stylesheet" type="text/css" href="__CDN__/group/css/public.css"/>
 <link rel="stylesheet" type="text/css" href="__CDN__/group/css/main.css"/>
 <link type="text/css" rel="stylesheet" href="__CDN__/group/css/media-queries.css" />
+<link rel="stylesheet" type="text/css" href="__CDN__/group/css/form.css">
 <script type="text/javascript" src="__CDN__/group/js/jquery.js"></script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -38,74 +39,86 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="contact cl">
     <div class="contact-info">
       <h3>Contact information</h3>
-      <p class="p1">{tmp:companyname}</p>
-      <p class="p2"><a href="tel:{tmp:tel}" rel="nofollow">{tmp:tel}</a></p>
-      <p class="p3">Fax: {tmp:fax}</p>
-      <p class="p4">Add: {tmp:address}</p>
-      <p class="p5"><a href="mailto:{tmp:email1}" rel="nofollow">{tmp:email1}</a>
-<a href="mailto:{tmp:email2}" rel="nofollow">{tmp:email2}</a></p>
+      <p class="p1">{$site.name}</p>
+{cms:blocklist id="block" name="contact" orderby="id" orderway="desc"}
+  {if $block.title == 'tel'}
+    <p class="p2"><a href="tel:{:str_replace(['<p>','</p>'], '', $block.content)}" rel="nofollow">{:str_replace(["<p>","</p>"], "", $block.content)}</a></p>
+  {/if}
+{/cms:blocklist}
+{cms:blocklist id="block" name="contact" orderby="id" orderway="desc"}
+  {if $block.title == 'Fax'}
+  <p class="p3">Fax: {$block.title}:{:str_replace(["<p>","</p>"], "", $block.content)}</p>
+  {/if}
+{/cms:blocklist}
+{cms:blocklist id="block" name="contact" orderby="id" orderway="desc"}
+  {if $block.title == 'Add'}
+  <p class="p4">Add: {$block.title}:{:str_replace(["<p>","</p>"], "", $block.content)}</p>
+  {/if}
+{/cms:blocklist}
+{cms:blocklist id="block" name="contact" orderby="id" orderway="desc"}
+  {if $block.title == 'Email'}
+  <p class="p5"><a href="mailto:{:str_replace(['<p>','</p>'], '', $block.content)}" rel="nofollow">{:str_replace(["<p>","</p>"], "", $block.content)}</a></p>
+  {/if}
+{/cms:blocklist}
     </div>
     <div class="contact-inquiry">
-      <link rel="stylesheet" type="text/css" href="https://www.frdrillgroup.com/aifeedback/form.css">
 <!--aifeedback v2 start -->
 <div class="crm-form">
   <div class="create-form-wrap">
     <div class="create-form-title" style="background:#0F74A5;">Contact Us</div>
     <div class="create-form-inner">
       <div class="create-form-ul">
-        <form>
-		<input type="hidden" value="1" name="fid">
-		<input type="hidden" value="" name="ref" id="ref">
-		<input type="hidden" value="" id="pagetitle" name="pagetitle">
-		<div class="create-form-sort ui-sortable">
-            <div class="create-form-li">
-              <div class="create-form-input">
-                <label>Name<span style="color:#F00">*</span>:</label>
-                <input type="text" name="Name">
-              </div>
+        <form class="contact-from" onsubmit="return $('.formPoint').show();" method="POST" action="/d/customer/post.html">
+          <input type="hidden" name="__diyname__" value="customer">
+          {:token()}
+		      <div class="create-form-li">
+            <div class="create-form-input">
+              <label>Name<span style="color:#F00">*</span>:</label>
+              <input type="text" name="row[name]">
             </div>
+          </div>
 <div class="create-form-li">
-              <div class="create-form-input">
-                <label>Country:</label>
-                <input type="text" name="Country">
-              </div>
+            <div class="create-form-input">
+              <label>Country:</label>
+              <input type="text" name="row[country]">
             </div>
+          </div>
 <div class="create-form-li">
-              <div class="create-form-input">
-                <label>Company:</label>
-                <input type="text" name="Company">
-              </div>
+            <div class="create-form-input">
+              <label>Company:</label>
+              <input type="text" name="row[company]">
             </div>
+          </div>
 <div class="create-form-li">
-              <div class="create-form-input">
-                <label>Email<span style="color:#F00">*</span>:</label>
-                <input type="text" name="Email">
-              </div>
+            <div class="create-form-input">
+              <label>Email<span style="color:#F00">*</span>:</label>
+              <input type="text" name="row[email]">
             </div>
+          </div>
 <div class="create-form-li">
-              <div class="create-form-input">
-                <label>Tel:</label>
-                <input type="text" name="Tel">
-              </div>
+            <div class="create-form-input">
+              <label>Tel:</label>
+              <input type="text" name="row[telephone]">
             </div>
+          </div>
 <div class="create-form-block create-form-li create-form-message">
-              <div class="create-form-textarea">
-                <label>Message<span style="color:#F00">*</span>:</label>
-                <textarea name="Message"></textarea>
-              </div>
+            <div class="create-form-textarea">
+              <label>Message<span style="color:#F00">*</span>:</label>
+              <textarea name="row[content]"></textarea>
             </div>
           </div>
-          <div class="create-form-block create-form-cen create-form-action">
-            <input type="hidden" class="cid" name="cid" value="381">
-            <button type="submit" class="create-form-submit" style="background:#0F74A5;">Submit</button>
-          </div>
+        </div>
+        <div class="create-form-block create-form-cen create-form-action">
+          <input type="hidden" class="cid" name="cid" value="381">
+          <button type="submit" class="create-form-submit" style="background:#0F74A5;">Submit</button>
+        </div>
         </form>
       </div>
     </div>
   </div>
 </div>
 <!--aifeedback v2 end -->
-<script type="text/javascript" src="https://www.frdrillgroup.com/aifeedback/form.js"></script>
+<!-- <script type="text/javascript" src="__CDN__/group/js/form.js"></script> -->
     </div>
   </div>
 </div>

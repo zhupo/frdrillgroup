@@ -17,45 +17,61 @@
 <body>
   {include file="common/head" /}
   {include file="common/mbx" /}
-<!-- <div class="sidebaner pr"> <img src="{tmp:rootdir}{tmp:spic}" alt="[about:pagetitle]"/> </div>
-<div class="path">
-  <div class="wp cl">
-    <p>{tmp:location style=> home=Home}</p>
-  </div>
-</div> -->
 <div class="about">
-  <div class="wp cl"> [about:content] </div>
+  <div class="wp cl">
+    <div class="pic">
+      {cms:blocklist id="block" name="ourHistory" orderby="weigh" orderway="desc" } 
+       <img src="{$block.image}" title="{$block.title}" _src="{$block.image}" alt=""></div>
+      <div class="txt"><h3>{$block.title}</h3><p><em></em></p>
+        {$block.content}
+        <p><br></p>
+      </div>
+ 	    	{/cms:blocklist}
+      
+  </div>
 </div>
 <div class="about2">
   <div class="wp cl">
+    {cms:blocklist id="block" name="factory" orderby="weigh" orderway="desc" } 
     <div class="tit">
-      <h3>FACTORY BRIEF INTRODUCTION</h3>
+      <h3>{$block.title}</h3>
     </div>
-    <ul>
-      {tmp:ad atid=4 max=5}
-      <li> <img src="{tmp:rootdir}[ad:pic]" alt="[ad:title]"/> <em>[ad:title]</em>
-        <p>{htmlcode:[ad:adcontent]}</p>
-      </li>
-      {/tmp:ad}
+ 	
+ 	{notempty name="$block.images"}
+ 	<ul>
+ 	  {volist name="$block.images|explode=',',###" id="image"}
+        <li> <img src="{$image|cdnurl}" alt=""/> <em>{$block.intro[$key]['info']}</em>
+          <p>{$block.intro[$key]['txt']}</p>
+        </li>
+      {/volist}
     </ul>
+    {/notempty} 
+ 	{/cms:blocklist} 
   </div>
 </div>
 <div class="about3">
-  <h3>ANNUAL PRODUCTION</h3>
-  <hr/>
-  <ul>
-    {tmp:ad atid=5 max=5}
-    <li> <img src="{tmp:rootdir}[ad:pic]"/> <em>{htmlcode:[ad:title]}</em>
-      <p>{htmlcode:[ad:adcontent]}</p>
-    </li>
-    {/tmp:ad}
-  </ul>
+    {cms:blocklist id="block" name="production" orderby="weigh" orderway="desc" } 
+    <h3>{$block.title}</h3>
+    <hr/>
+ 	  {notempty name="$block.images"}
+ 	  <ul>
+ 	  {volist name="$block.images|explode=',',###" id="image"}
+        <li> <img src="{$image|cdnurl}" alt=""/> <em>{$block.intro[$key]['info']}</em>
+          <p>{$block.intro[$key]['txt']}</p>
+        </li>
+      {/volist}
+    </ul>
+    {/notempty} 
+ 	{/cms:blocklist} 
 </div>
-<div class="about4"> {tmp:ad atid=6 max=1}
-  <h3>[ad:title]</h3>
-  <p>[ad:adcontent]</p>
-  <div class="pic"> <img src="{tmp:rootdir}[ad:pic]" alt="[ad:title]"/> </div>
-  {/tmp:ad} </div>
+<div class="about4"> 
+  {cms:blocklist id="block" name="ourCurrent" orderby="weigh" orderway="desc" } 
+  <h3>{$block.title}</h3>
+  {$block.content}
+  <div class="pic"> <img src="{$block.image}" alt="{$block.title}"/> </div>
+  {/tmp:ad} 
+  {/cms:blocklist}
+</div>
   {include file="common/foot" /}
 <script type="text/javascript" src="__CDN__/group/js/js.js"></script>
 </body>

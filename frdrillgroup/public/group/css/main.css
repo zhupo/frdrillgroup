@@ -194,7 +194,7 @@ h3.tit::after{content:"";display:block;height:3px;background:#1C63B8;width:250px
 
 .about{padding:70px 0 50px;}
 .about .pic{float:left;width:614px;position:relative;}
-.about .pic::after{content:"";border:2px solid #7D7D7D;width:614px;height:384px;position:absolute;top:22px;left:22px;box-sizing:border-box;display:block;z-index:1;}
+.about .pic::after{content:"";border:2px solid #7D7D7D;position:absolute;top:22px;left:22px;box-sizing:border-box;display:block;z-index:1;}
 .about .pic img{position:relative;z-index:20;}
 .about .txt{float:right;width:530px;margin:30px 0 0;}
 .about .txt h3{font-size:36px;color:#000;font-weight:bold;margin-bottom:40px;}
