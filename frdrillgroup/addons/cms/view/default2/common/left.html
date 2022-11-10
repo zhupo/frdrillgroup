@@ -14,7 +14,7 @@
 		</li>
 		{/tmp:navlist} -->
 
-		{cms:channellist id="channel" type="son" typeid="44" condition="1=cpindex" orderby="weigh" orderway="asc"}
+		{cms:channellist id="channel" type="son" typeid="44" condition="1=cpindex" orderby="id" orderway="desc"}
 			<!-- <li><a href="{$channel.url}" rel="nofollow">{$channel.name}</a></li> -->
 			
 			<li class="{if $channel.is_active} active {/if}">

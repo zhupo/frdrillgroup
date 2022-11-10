@@ -1,55 +1,58 @@
 <div class="pro-inquiry side-inquiry">
-     <link rel="stylesheet" type="text/css" href="https://www.frdrillgroup.com/aifeedback/form.css">
+     <link rel="stylesheet" type="text/css" href="__CDN__/group/css/form.css">
 <!--aifeedback v2 start -->
 <div class="crm-form">
   <div class="create-form-wrap">
     <div class="create-form-title" style="background:#0F74A5;">Contact Us</div>
     <div class="create-form-inner">
       <div class="create-form-ul">
-        <form>
-		<input type="hidden" value="1" name="fid">
-		<input type="hidden" value="" name="ref" id="ref">
-		<input type="hidden" value="" id="pagetitle" name="pagetitle">
-		<div class="create-form-sort ui-sortable">
+        <form class="contact-from" onsubmit="return $('.formPoint').show();" method="POST" action="/d/customer/post.html">
+          <!-- <input type="hidden" name="__diyname__" value="customer"> -->
+          {:token()}
+
+          <!-- <input type="hidden" value="1" name="fid">
+		      <input type="hidden" value="" name="ref" id="ref">
+		      <input type="hidden" value="" id="pagetitle" name="pagetitle"> -->
+		      <div class="create-form-sort ui-sortable">
             <div class="create-form-li create-form-block">
               <div class="create-form-input">
                 <label>Name<span style="color:#F00">*</span>:</label>
-                <input type="text" name="Name">
+                <input type="text" name="row[name]">
               </div>
             </div>
-<div class="create-form-li create-form-block">
+          <div class="create-form-li create-form-block">
               <div class="create-form-input">
                 <label>Country:</label>
-                <input type="text" name="Country">
+                <input type="text" name="row[country]">
               </div>
             </div>
-<div class="create-form-li create-form-block">
+          <div class="create-form-li create-form-block">
               <div class="create-form-input">
                 <label>Company:</label>
-                <input type="text" name="Company">
+                <input type="text" name="row[company]">
               </div>
             </div>
-<div class="create-form-li create-form-block">
+          <div class="create-form-li create-form-block">
               <div class="create-form-input">
                 <label>Email<span style="color:#F00">*</span>:</label>
-                <input type="text" name="Email">
+                <input type="text" name="row[email]">
               </div>
             </div>
-<div class="create-form-li create-form-block">
+          <div class="create-form-li create-form-block">
               <div class="create-form-input">
                 <label>Tel:</label>
-                <input type="text" name="Tel">
+                <input type="text" name="row[telephone]">
               </div>
             </div>
-<div class="create-form-block create-form-li create-form-message">
+          <div class="create-form-block create-form-li create-form-message">
               <div class="create-form-textarea">
                 <label>Message<span style="color:#F00">*</span>:</label>
-                <textarea name="Message"></textarea>
+                <textarea name="row[content]"></textarea>
               </div>
             </div>
           </div>
           <div class="create-form-block create-form-cen create-form-action">
-            <input type="hidden" class="cid" name="cid" value="381">
+            <!-- <input type="hidden" class="cid" name="cid" value="381"> -->
             <button type="submit" class="create-form-submit" style="background:#0F74A5;">Submit</button>
           </div>
         </form>
@@ -58,5 +61,5 @@
   </div>
 </div>
 <!--aifeedback v2 end -->
-<script type="text/javascript" src="https://www.frdrillgroup.com/aifeedback/form.js"></script>
-    </div>
+<!-- <script type="text/javascript" src="https://www.frdrillgroup.com/aifeedback/form.js"></script> -->
+</div>

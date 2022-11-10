@@ -20,7 +20,7 @@ class Bootstrap extends Paginator
      * @param string $text
      * @return string
      */
-    protected function getPreviousButton($text = "<i class='ico icon-icon--'></i>")
+    protected function getPreviousButton($text = "<")
     {
         if ($this->currentPage() <= 1) {
             return $this->getDisabledTextWrapper($text);
@@ -38,7 +38,7 @@ class Bootstrap extends Paginator
      * @param string $text
      * @return string
      */
-    protected function getNextButton($text = "<i class='ico icon-icon---copy'></i>")
+    protected function getNextButton($text = ">")
     {
         if (!$this->hasMore) {
             return $this->getDisabledTextWrapper($text);
