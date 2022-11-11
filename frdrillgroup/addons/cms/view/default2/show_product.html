@@ -6,11 +6,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 <meta http-equiv="X-UA-Compatible" content="IE=10" />
 <title>[news:title], China [news:title] Manufacturers, Suppliers, Factory - {tmp:sitetitle}</title><meta name="keywords" content="Cheap [news:title], [news:title] For sale, Wholesale [news:title]" ><meta name="description" content="[news:pagedesc]">
-<link rel="stylesheet" type="text/css" href="{tmp:tempath}css/public.css"/>
-<link rel="stylesheet" type="text/css" href="{tmp:tempath}css/main.css"/>
-<link rel="stylesheet" type="text/css" href="{tmp:tempath}css/swiper3.css"/>
-<link type="text/css" rel="stylesheet" href="{tmp:tempath}css/media-queries.css" />
-<script type="text/javascript" src="{tmp:tempath}js/jquery.js"></script>
+<link rel="stylesheet" type="text/css" href="__CDN__/group/css/public.css"/>
+<link rel="stylesheet" type="text/css" href="__CDN__/group/css/main.css"/>
+<link rel="stylesheet" type="text/css" href="__CDN__/group/css/swiper3.css"/>
+<link type="text/css" rel="stylesheet" href="__CDN__/group/css/media-queries.css" />
+<script type="text/javascript" src="__CDN__/group/js/jquery.js"></script>
 </head>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -20,16 +20,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-PQ8J39D');</script>
 <!-- End Google Tag Manager -->
 <body>
-{tmp:top}
-<div class="sidebaner pr"> <img src="{tmp:rootdir}{tmp:spic}" alt="{tmp:sname}"/> </div>
-<div class="path">
-  <div class="wp cl">
-    <p>{tmp:location style=> home=Home}</p>
-  </div>
-</div>
+{include file="common/head" /}
+{include file="common/mbx" /}
 <div class="main wp cl">
-  <div class="mainleft"> {tmp:left}
-    {tmp:template src=sideform.html} </div>
+  <div class="mainleft"> 
+    {include file="common/left" /}
+    {include file="sideform" /}
+  </div>
   <div class="mainRight">
     <div class="pro_view_top cl">
       <div class="pro_img">
@@ -128,10 +125,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
   </div>
  </div>
-{tmp:foot} 
-<script type="text/javascript" src="{tmp:tempath}js/js.js"></script> 
-<script type="text/javascript" src="{tmp:tempath}js/jquery.fancybox.js"></script> 
-<script type="text/javascript" src="{tmp:tempath}js/swiper3.js"></script> 
-<script type="text/javascript" src="{tmp:tempath}js/pro_detail.js"></script>
+ {include file="common/foot" /}
+<script type="text/javascript" src="__CDN__/group/js/js.js"></script> 
+<script type="text/javascript" src="__CDN__/group/js/jquery.fancybox.js"></script> 
+<script type="text/javascript" src="__CDN__/group/js/swiper3.js"></script> 
+<script type="text/javascript" src="__CDN__/group/js/pro_detail.js"></script>
 <!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5bce940101aa23e2"></script> </body>
 </html>
