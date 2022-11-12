@@ -44,7 +44,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h3><em>Product Categories</em></h3>
     <ul class="cl">
       {cms:channellist id="channel" type="son" typeid="44" condition="1=cpindex"}
-      {cms:arclist id="item" flag="index" row="6" orderby="updatetime" channel="channel['id']", addon="content,bgimage"}
+      {cms:arclist id="item" flag="index" row="6" orderby="updatetime" channel="channel['id']", addon="content"}
       <li> <a class="pic" href="{$channel.url}">
         <img src="{$item.image}" /></a>
         <h5><a href="{$channel.url}">{$item.title}</a></h5>

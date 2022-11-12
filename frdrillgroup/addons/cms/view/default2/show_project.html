@@ -8,32 +8,31 @@
 <title>[news:title]-{tmp:sname}-{tmp:sitetitle}</title>
 <meta name="keywords" content="[news:pagekeys]" >
 <meta name="description" content="[news:pagedesc]">
-<link rel="stylesheet" type="text/css" href="{tmp:tempath}css/public.css"/>
-<link rel="stylesheet" type="text/css" href="{tmp:tempath}css/main.css"/>
-<link type="text/css" rel="stylesheet" href="{tmp:tempath}css/media-queries.css" />
-<script type="text/javascript" src="{tmp:tempath}js/jquery.js"></script>
+<link rel="stylesheet" type="text/css" href="__CDN__/group/css/public.css"/>
+<link rel="stylesheet" type="text/css" href="__CDN__/group/css/main.css"/>
+<link type="text/css" rel="stylesheet" href="__CDN__/group/css/media-queries.css" />
+<script type="text/javascript" src="__CDN__/group/js/jquery.js"></script>
 </head>
 
 <body>
-{tmp:top}
-<div class="sidebaner pr"> <img src="{tmp:rootdir}{tmp:spic}" alt="{tmp:sname}"/> </div>
-<div class="path">
-  <div class="wp cl">
-    <p>{tmp:location style=> home=Home}</p>
-  </div>
-</div>
+  {include file="common/head" /}
+  {include file="common/mbx" /}
 <div class="main wp cl">
   <div class="newsnr">
-    <h1>[news:title]</h1>
-    <div class="artInfo"> <span class="time">Time : [news:date]</span> <span class="hit">Hits : [news:visits]</span> <!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_inline_share_toolbox_ysau"></div> </div>
-    <div class="myart"> [news:content] </div>
+    <h1>{cms:archives name="title" /}</h1>
+    <div class="artInfo"> <span class="time">Time : {cms:archives name="createtime|date='Y-m-d',###" /}</span> <span class="hit">Hits : {cms:archives name="views" /}</span> <!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_inline_share_toolbox_ysau"></div> </div>
+    <div class="myart"> {cms:archives name="detail" /} </div>
     <div class="pnbar cl">
-      <p>Prev : <a href="[news:prevlink]">{if:"[news:prevlink]"<>""}[news:prevtitle]{else}None{end if}</a></p>
-      <p>Next : <a href="[news:nextlink]">{if:"[news:nextlink]"<>""}[news:nexttitle]{else}None{end if}</a></p>
+      {cms:prevnext id="prev" type="prev" archives="$__ARCHIVES__.id" channel="$__CHANNEL__.id"}
+      <p>Prev : <a href="{$prev.url}">{if $prev.url != ''} {$prev.title} {else} None {/if}</a></p> 
+      {/cms:prevnext}
+      {cms:prevnext id="next" type="next" archives="$__ARCHIVES__.id" channel="$__CHANNEL__.id"}
+        <p>Next : <a href="{$next.url}">{if $next.url != ''} {$next.title} {else} None {/if}</a></p>
+      {/cms:prevnext}
     </div>
   </div>
 </div>
-{tmp:foot}
-<script type="text/javascript" src="{tmp:tempath}js/js.js"></script>
+{include file="common/foot" /}}
+<script type="text/javascript" src="__CDN__/group/js/js.js"></script>
 <!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5bce940101aa23e2"></script> </body>
 </html>

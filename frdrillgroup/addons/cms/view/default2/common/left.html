@@ -14,14 +14,14 @@
 		</li>
 		{/tmp:navlist} -->
 
-		{cms:channellist id="channel" type="son" typeid="44" condition="1=cpindex" orderby="id" orderway="desc"}
+		{cms:channellist id="channel" type="son" typeid="44" condition="1=cpindex" orderby="weigh" orderway="desc"}
 			<!-- <li><a href="{$channel.url}" rel="nofollow">{$channel.name}</a></li> -->
 			
 			<li class="{if $channel.is_active} active {/if}">
 		    <h5><a href="{$channel.url}">{$channel.name}</a>{if $channel.has_child}<span></span>{/if}</h5>
 			{if $channel.has_child}
 			<dl style="{if $channel.is_active} display:block; {/if}">
-				{cms:channellist id="son" type="son" typeid="channel['id']" cache="0" row="20"}
+				{cms:channellist id="son" type="son" typeid="channel['id']" cache="0" row="20" orderby="weigh" orderway="asc"}
 					<dd class="{if $son.is_active} active {/if}"><a href="{$son.url}">{$son.name}</a></dd>
 				{/cms:channellist}
 			</dl>
