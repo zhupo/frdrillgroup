@@ -8,18 +8,20 @@
 <title>{tmp:keys} Search result-{tmp:sitetitle}</title>
 <meta name="keywords" content="{tmp:pagekeys}" >
 <meta name="description" content="{tmp:pagedesc}">
-<link rel="stylesheet" type="text/css" href="{tmp:tempath}css/public.css"/>
-<link rel="stylesheet" type="text/css" href="{tmp:tempath}css/main.css"/>
-<link type="text/css" rel="stylesheet" href="{tmp:tempath}css/media-queries.css" />
-<script type="text/javascript" src="{tmp:tempath}js/jquery.js"></script>
+<link rel="stylesheet" type="text/css" href="__CDN__/group/css/public.css"/>
+<link rel="stylesheet" type="text/css" href="__CDN__/group/css/main.css"/>
+<link type="text/css" rel="stylesheet" href="__CDN__/group/css/media-queries.css" />
+<script type="text/javascript" src="__CDN__/group/js/jquery.js"></script>
 </head>
 
 <body>
-{tmp:top}
-<div class="sidebaner pr"> <img src="{tmp:tempath}images/sidebanner01.jpg" /> </div>
+{include file="common/head" /}
+<div class="sidebaner pr"> <img src="__CDN__/group/images/sidebanner01.jpg" /> </div>
 <div class="path">
   <div class="wp cl">
-    <p>{tmp:location style=> home=Home}</p>
+    <p>{cms:breadcrumb id="item" key="k"}
+		  {if $k>1}» {/if}<a title="{$item.name}" href="{$item.url}">{$item.name}</a>
+    {/cms:breadcrumb}</p>
   </div>
 </div>
 <div class="main wp cl">
@@ -27,30 +29,32 @@
   <div class="left_nav">
   <h3>Products</h3>
   <ul>
-    {tmp:navlist sid=1}
-    <li {if:[navlist:sid]={tmp:sid}}class="active"{end if}><a href="[navlist:link]">[navlist:name]</a></li>
-    {/tmp:navlist}
+    {cms:channellist id="channel" type="son" typeid="44" condition="1=cpindex" orderby="weigh" orderway="desc"}
+      <li class="{if $channel.is_active} active {/if}"><a href="{$channel.url}">{$channel.name}</a></li>
+    {/cms:channellist}
   </ul>
 </div>
   </div>
   <div class="mainRight">
     <div class="productlist">
       <ul>
-        {tmp:search sid={tmp:sid} size=10 order=order}
-        <li> <a class="pic" href="[search:link]"><img src="{tmp:rootdir}[search:pic]" alt="[search:title]"/><ins></ins></a>
+        {cms:pagelist id="item"}
+  
+        <li> <a class="pic" href="{$item.url}"><img src="{$item.image}" alt="{$item.title}"/><ins></ins></a>
           <div class="txt cl">
-            <h6><a href="[search:link]">[search:title]</a></h6>
-            <p>[search:zpdesc]</p>
-            <a class="more" href="[search:link]">MORE <i class="qico qico-right7"></i></a> </div>
+            <h6><a href="{$item.url}">{$item.title}</a></h6>
+            <a class="more" href="{$item.url}">MORE <i class="qico qico-right7"></i></a> </div>
         </li>
-        {/tmp:search}
+			  <li><a href="{$item.url}">{$item.title}</a>  <span>Category：{$item.channel.name}</span></li>
+		
+	      {/cms:pagelist}
       </ul>
     </div>
-    <div class="digg"> {list:page len=3 style=1} </div>
+    <div class="digg"> {cms:pageinfo type="full" /} </div>
   </div>
 </div>
-{tmp:foot} 
-<script type="text/javascript" src="{tmp:tempath}js/jquery.js"></script> 
-<script type="text/javascript" src="{tmp:tempath}js/js.js"></script>
+{include file="common/foot" /} 
+<script type="text/javascript" src="__CDN__/group/js/jquery.js"></script> 
+<script type="text/javascript" src="__CDN__/group/js/js.js"></script>
 </body>
 </html>

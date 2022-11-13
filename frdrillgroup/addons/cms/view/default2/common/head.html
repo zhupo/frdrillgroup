@@ -84,6 +84,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <input class="submit_text" type="text" name="keys" placeholder="Search" />
           <input class="submit_btn" type="submit" value="GO" />
         </form>
+
+        <form class="serchbox" name="search" action="/s.html" method="post">
+          <input type="hidden" name="type" value="product" />
+          <input class="submit_text" type="text" name="keys" placeholder="Search" data-suggestion-url="/addons/cms/search/suggestion.html" />
+          <button class="submit_btn" aria-label="search button" aria-hidden="true">GO</button>
+      </form>
       </div>
       <div class="header-lang">
         <div class="box"> <img src="__CDN__/group/images/flag/en.png" /><em>EN</em><i class="qico qico-down-jiantou"></i> </div>
