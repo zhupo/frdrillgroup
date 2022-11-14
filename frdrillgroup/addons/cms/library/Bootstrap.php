@@ -169,11 +169,11 @@ class Bootstrap extends Paginator
                 );
             } else {
                 return sprintf(
-                    '<div class="Pagination_list">%s %s %s %s</div>',
+                    '<div class="Pagination_list">%s %s %s</div>',
                     $this->getPreviousButton(),
                     $this->getLinks(),
                    // $this->getGoPage(),
-                    $this->getAllPage(),
+                    // $this->getAllPage(),
                     $this->getNextButton()
                      
                 );
@@ -217,7 +217,7 @@ class Bootstrap extends Paginator
      */
     protected function getActivePageWrapper($text)
     {
-        return '<span>' . $text . '</span>';
+        return '<span class="active">' . $text . '</span>';
     }
 
     /**
