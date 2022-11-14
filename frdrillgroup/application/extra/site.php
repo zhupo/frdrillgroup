@@ -2,7 +2,7 @@
 
 return array (
   'name' => 'CHANGSHA FRIEND INDUSTRIAL CO.,LTD',
-  'beian' => 'Copyright ©  | www.qanzh.cn',
+  'beian' => 'Changsha Friend Industrial Co.,Ltd All rights reserved',
   'cdnurl' => '',
   'version' => '2022-5-22 16:16:07',
   'timezone' => 'Asia/Shanghai',
@@ -31,7 +31,7 @@ return array (
   'mail_smtp_host' => 'smtp.qq.com',
   'mail_smtp_port' => '465',
   'mail_smtp_user' => '1738405457@qq.com',
-  'mail_smtp_pass' => 'tdeyjvylemcieghi',
+  'mail_smtp_pass' => 'xzocrdjgdirxegid',
   'mail_verify_type' => '2',
   'mail_from' => '1738405457@qq.com',
   'email' => '1738405457@qq.com',
@@ -40,7 +40,7 @@ return array (
   'keywords' => 'CHANGSHA FRIEND INDUSTRIAL CO.,LTD',
   'description' => 'Invess offers an extensive range of professional services and a high degree of spe-cialization. We serves both private & public traded companies. We bring over 35 years of experience.',
   'logotxt' => '',
-  'logo' => '/uploads/20220611/43b49fcc83a4b7f8a4f9c447d28ae0c1.png',
+  'logo' => '/uploads/20221114/2b088705a52721f150780c61816bac43.png',
   'logo2' => '',
   'head' => '1',
   'indexfw' => '1',

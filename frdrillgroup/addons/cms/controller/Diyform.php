@@ -234,8 +234,8 @@ class Diyform extends Base
                 //周江寿2021年4月20日10:40:50新增开始
                 $config = \think\Config::get('site');
                 if($config['autosend'] == 1){
-                    $content = '<br> Email：'. isset($row['email']) ? $row['email'] : ''
-                     . '<br> message：'. isset($row['content']) ? $row['content'] : '';
+                    $content = '<br> Email：'. $row['email']
+                     . '<br> message：'. $row['content'];
                     $email = new \app\common\library\Email;
                     $result = $email
                         ->to($config['email'])//接收邮箱

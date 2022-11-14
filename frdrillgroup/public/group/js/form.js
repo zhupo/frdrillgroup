@@ -5,7 +5,7 @@ $(function(){
 	var crmValidStr = "This field is required.";
 	var crmEmailStr = "Please enter a valid email address.";
 	var crmFailedStr = "Email send failed";
-                $(".crm-form").find("input[name='Name'],input[name='Email'],textarea[name='Message']").bind("keyup blur",function(){
+                $(".crm-form").find("input[name='row[name]'],input[name='row[email]'],textarea[name='row[content]']").bind("keyup blur",function(){
             _crminputVali($(this),crmValidStr);
         });
                 $(".crm-form form").submit(function(){
@@ -14,29 +14,9 @@ $(function(){
                         form.find("input[name='Name'],input[name='Email'],textarea[name='Message']").each(function(){
                 if(!_crminputVali($(this),crmValidStr)){result = 1;}
             });
-                        if(result) return false;
+            if(result) return false;
             form.find(".create-form-submit").attr("disabled","disabled").append('<span class="crm-submit-load"></span>');
-            var url = "https://www.frdrillgroup.com/aifeedback/save.php";
-            $.post(url, form.serialize(), function(result){
-                form.find(".create-form-submit").removeAttr("disabled").find(".crm-submit-load").remove();
-                if(result=='1'){
-                    _crmAlertText(1,'Email Send Succesfully!');
-                    form[0].reset();
-                }
-                else if(result=='2'){
-                	_crmAlertText(1,'Content not allowed!');
-                }
-			   else if(result=='3'){
-                	_crmAlertText(1,'Only one message allowed within 3 minute!');
-                }
-                else if(result=='4'){
-                	_crmAlertText(1,'Tel format error!');
-                }
-                else{ 
-                    _crmAlertText(1,crmFailedStr);
-                }
-            });
-            return false;
+            form.find(".create-form-submit").removeAttr("disabled").find(".crm-submit-load").remove();
         });
     });
     function _crminputVali(item,text){
